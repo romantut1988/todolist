@@ -1,7 +1,9 @@
+// import { type } from 'os';
+import { type } from 'os';
 import React, { useState } from 'react';
 import { v1 } from 'uuid';
 import './App.css';
-import ToDoList from './TodoList'
+import ToDoList from './TodoList';
 
 export type FilterValueType = 'all' | 'active' | 'completed'
 
@@ -19,7 +21,13 @@ function App() {
         { id: v1(), title: 'HTML', isDone: true },
         { id: v1(), title: 'CSS', isDone: true },
         { id: v1(), title: 'REACT', isDone: false },
+        { id: v1(), title: 'REDUX', isDone: false },
     ])
+
+    function changeTasksStatus (taskID: string, isDone: boolean) {
+        const updatedTasks = (tasks.map(task => task.id === taskID ? {...task, isDone: !task.isDone}:task))
+        setTasks(updatedTasks)
+    }
 
     function removeTask(taskID: string) {
         setTasks(tasks.filter(task => task.id !== taskID))
@@ -57,8 +65,9 @@ function App() {
                 addTask={addTask}
                 removeTask={removeTask}
                 changeFilter={changeFilter}
+                filter={filter}
+                chngeTasksStstus={changeTasksStatus}
             />
-
         </div>
     );
 }
