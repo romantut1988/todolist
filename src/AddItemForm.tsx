@@ -1,51 +1,47 @@
-import React, { ChangeEvent, KeyboardEvent, useState } from 'react';
-import TextField from '@mui/material/TextField';
-import IconButton from '@mui/material/IconButton';
-import { AddBox } from '@mui/icons-material';
+import React, {ChangeEvent, KeyboardEvent, useState} from "react";
+import {Button, IconButton, TextField} from "@mui/material";
+import {ControlPoint} from "@mui/icons-material";
 
 type AddItemFormPropsType = {
     addItem: (title: string) => void
 }
 
-export const AddItemForm = React.memo(function (props: AddItemFormPropsType) {
-    console.log('AddItemForm called')
-
-    let [title, setTitle] = useState('')
+export function AddItemForm(props: AddItemFormPropsType) {
+    let [title, setTitle] = useState("")
     let [error, setError] = useState<string | null>(null)
-
-    const addItem = () => {
-        if (title.trim() !== '') {
-            props.addItem(title);
-            setTitle('');
-        } else {
-            setError('Title is required');
-        }
-    }
-
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setTitle(e.currentTarget.value)
     }
-
     const onKeyPressHandler = (e: KeyboardEvent<HTMLInputElement>) => {
-        if (error !== null) {
-            setError(null);
-        }
+        setError(null);
         if (e.charCode === 13) {
-            addItem();
+            addTask();
+        }
+    }
+    const addTask = () => {
+        let newTitle = title.trim();
+        if (newTitle !== "") {
+            props.addItem(newTitle);
+            setTitle("");
+        } else {
+            setError("Title is required");
         }
     }
 
     return <div>
-        <TextField variant="outlined"
-                   error={!!error}
-                   value={title}
+        <TextField value={title}
+                   variant={"outlined"}
+                   label={"Type value"}
                    onChange={onChangeHandler}
                    onKeyPress={onKeyPressHandler}
-                   label="Title"
+                   className={error ? "error" : ""}
+                   error={!!error}
                    helperText={error}
         />
-        <IconButton color="primary" onClick={addItem}>
-            <AddBox/>
+
+        <IconButton onClick={addTask} color={"primary"}>
+            <ControlPoint />
         </IconButton>
+
     </div>
-})
+}
