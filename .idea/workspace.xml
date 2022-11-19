@@ -51,7 +51,7 @@
       <recent name="D:\todolist-incubator\src\stories" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.storybook">
     <configuration name="user reducer should increment only age" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -65,8 +65,19 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="storybook" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="storybook" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.storybook" />
         <item itemvalue="Jest.user reducer should increment only age" />
       </list>
     </recent_temporary>
@@ -145,7 +156,8 @@
       <workItem from="1668767717983" duration="2718000" />
       <workItem from="1668770777824" duration="251000" />
       <workItem from="1668771176736" duration="337000" />
-      <workItem from="1668805987118" duration="1296000" />
+      <workItem from="1668805987118" duration="3045000" />
+      <workItem from="1668881322553" duration="4240000" />
     </task>
     <servers />
   </component>
