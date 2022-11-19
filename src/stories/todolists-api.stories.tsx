@@ -6,7 +6,10 @@ export default {
 }
 
 const settings = {
-    withCredentials: true
+    withCredentials: true,
+    headers: {
+        'API-KEY': '983f5ae0-fa70-42e7-b1da-b9aece5af228'
+    }
 }
 
 export const GetTodolists = () => {
@@ -23,6 +26,10 @@ export const GetTodolists = () => {
 export const CreateTodolist = () => {
     const [state, setState] = useState<any>(null)
     useEffect(() => {
+        const data = {title: "LESSON 13"}
+        axios.post('https://social-network.samuraijs.com/api/1.1/todo-lists', data, settings)
+            .then(() => {
+            })
     }, [])
 
     return <div> {JSON.stringify(state)}</div>
@@ -30,6 +37,7 @@ export const CreateTodolist = () => {
 export const DeleteTodolist = () => {
     const [state, setState] = useState<any>(null)
     useEffect(() => {
+
     }, [])
 
     return <div> {JSON.stringify(state)}</div>
