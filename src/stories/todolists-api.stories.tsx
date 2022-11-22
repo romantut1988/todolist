@@ -1,21 +1,14 @@
 import React, {useEffect, useState} from 'react'
-import axios from "axios";
+import {todolistApi} from "../api/todolist-api";
 
 export default {
     title: 'API'
 }
 
-const settings = {
-    withCredentials: true,
-    headers: {
-        'API-KEY': '983f5ae0-fa70-42e7-b1da-b9aece5af228'
-    }
-}
-
 export const GetTodolists = () => {
     const [state, setState] = useState<any>(null)
     useEffect(() => {
-        const promise = axios.get('https://social-network.samuraijs.com/api/1.1/todo-lists', settings)
+        const promise = todolistApi.getToDoLists()
         promise.then((res) => {
             setState(res.data)
         })
@@ -26,9 +19,10 @@ export const GetTodolists = () => {
 export const CreateTodolist = () => {
     const [state, setState] = useState<any>(null)
     useEffect(() => {
-        const data = {title: "LESSON 13"}
-        axios.post('https://social-network.samuraijs.com/api/1.1/todo-lists', data, settings)
-            .then(() => {
+        const title = "LESSON 13"
+        todolistApi.createToDoList(title)
+            .then((res) => {
+                setState(res.data)
             })
     }, [])
 
@@ -37,8 +31,8 @@ export const CreateTodolist = () => {
 export const DeleteTodolist = () => {
     const [state, setState] = useState<any>(null)
     useEffect(() => {
-        const todoId = '744b9aec-d1b6-4b78-b3e2-30ea1644f3ad'
-        axios.delete(`https://social-network.samuraijs.com/api/1.1/todo-lists/${todoId}`, settings)
+        const todoId = '56d58b67-6cdb-4eae-a5ad-03f68f2d08b5'
+        todolistApi.deleteToDoList(todoId)
             .then((res) => {
                 setState(res.data)
             })
@@ -49,6 +43,12 @@ export const DeleteTodolist = () => {
 export const UpdateTodolistTitle = () => {
     const [state, setState] = useState<any>(null)
     useEffect(() => {
+        const todoId = 'b4bcfb2b-be0c-4c94-a0bc-e165b3dff3e7'
+        const title = 'Lesson 14'
+        todolistApi.updateToDoList(todoId, title)
+            .then((res) => {
+                setState(res.data)
+            })
     }, [])
 
     return <div> {JSON.stringify(state)}</div>
