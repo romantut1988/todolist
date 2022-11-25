@@ -15,14 +15,14 @@ import {
     addTodolistAC,
     changeTodolistFilterAC,
     changeTodolistTitleAC,
-    FilterValuesType,
+    FilterValuesType, getTodoListsThunk,
     removeTodolistAC,
     TodolistDomainType
 } from './state/todolists-reducer'
 import {addTaskAC, changeTaskStatusAC, changeTaskTitleAC, removeTaskAC} from './state/tasks-reducer';
 import {useDispatch, useSelector} from 'react-redux';
 import {AppRootStateType} from './state/store';
-import {TaskStatuses, TaskType, todolistsAPI} from './api/todolists-api'
+import {TaskStatuses, TaskType} from './api/todolists-api'
 
 
 export type TasksStateType = {
@@ -77,10 +77,7 @@ function App() {
     }, [dispatch]);
 
     useEffect(() => {
-        const promise = todolistsAPI.getTodolists()
-        promise.then((res) => {
-            alert(JSON.stringify(res))
-        })
+       dispatch(getTodoListsThunk)
     }, [])
 
     return (
