@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a260b12-850c-4a4e-9c78-3343a2ca7107" name="Changes" comment="">
+    <list default="true" id="8916778e-83a4-462b-9171-1a09418ddb7b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state/tasks-reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/tasks-reducer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AddItemForm.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EditableSpan.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Task.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Todolist.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/todolists-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/todolists-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/store.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/tasks-reducer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/todolists-reducer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,15 +27,8 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
-  </component>
-  <component name="ProjectId" id="2A5T1cwA7oaIj4mLmUhGpTuRA1v" />
+  <component name="ProjectId" id="2IeyEyen0qrcnrjfyWDQP265B3U" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -31,160 +37,22 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../project-pizza" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="ts.external.directory.path" value="D:\todolist-incubator\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\todolist-incubator\src\stories" />
-      <recent name="D:\todolist-incubator\src" />
-      <recent name="D:\todolist-incubator\src\state" />
-    </key>
-    <key name="es6.move.members.recent.items">
-      <recent name="D:\todolist-incubator\src\Task.tsx" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\todolist-incubator\src" />
-      <recent name="D:\todolist-incubator\src\stories" />
-    </key>
-  </component>
-  <component name="RunManager" selected="npm.storybook">
-    <configuration name="user reducer should increment only age" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
-      <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
-      <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/state/user-reducer.tets.ts" />
-      <test-names>
-        <test-name value="user reducer should increment only age" />
-      </test-names>
-      <method v="2" />
-    </configuration>
-    <configuration name="storybook" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="storybook" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="npm.storybook" />
-        <item itemvalue="Jest.user reducer should increment only age" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="9a260b12-850c-4a4e-9c78-3343a2ca7107" name="Changes" comment="" />
-      <created>1654298237464</created>
+      <changelist id="8916778e-83a4-462b-9171-1a09418ddb7b" name="Changes" comment="" />
+      <created>1670556241993</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1654298237464</updated>
-      <workItem from="1654298239527" duration="372000" />
-      <workItem from="1654299161510" duration="126000" />
-      <workItem from="1654299332701" duration="208000" />
-      <workItem from="1654324867396" duration="1000" />
-      <workItem from="1654338005537" duration="118000" />
-      <workItem from="1655986038177" duration="95000" />
-      <workItem from="1655988933049" duration="1164000" />
-      <workItem from="1660692979530" duration="56000" />
-      <workItem from="1660901532430" duration="41000" />
-      <workItem from="1665006536146" duration="65000" />
-      <workItem from="1665092164588" duration="33000" />
-      <workItem from="1666682165704" duration="233000" />
-      <workItem from="1666683815835" duration="11000" />
-      <workItem from="1667336089388" duration="118000" />
-      <workItem from="1667372622971" duration="8000" />
-      <workItem from="1667509010222" duration="163000" />
-      <workItem from="1667509640258" duration="68000" />
-      <workItem from="1667509918463" duration="397000" />
-      <workItem from="1667510545508" duration="820000" />
-      <workItem from="1667511474254" duration="78000" />
-      <workItem from="1667511572576" duration="523000" />
-      <workItem from="1667726499754" duration="95000" />
-      <workItem from="1667726627793" duration="48000" />
-      <workItem from="1667726687806" duration="22000" />
-      <workItem from="1667726752188" duration="24000" />
-      <workItem from="1667726855143" duration="1628000" />
-      <workItem from="1667738317595" duration="1945000" />
-      <workItem from="1667740364783" duration="97000" />
-      <workItem from="1667740526498" duration="50000" />
-      <workItem from="1667740632211" duration="66000" />
-      <workItem from="1667740763012" duration="4890000" />
-      <workItem from="1667745919101" duration="169000" />
-      <workItem from="1667757717223" duration="2573000" />
-      <workItem from="1667772283951" duration="1406000" />
-      <workItem from="1667933860123" duration="6894000" />
-      <workItem from="1668074292743" duration="747000" />
-      <workItem from="1668075262140" duration="5870000" />
-      <workItem from="1668091082354" duration="761000" />
-      <workItem from="1668096150551" duration="1592000" />
-      <workItem from="1668098207059" duration="3008000" />
-      <workItem from="1668112131118" duration="1753000" />
-      <workItem from="1668115174535" duration="3236000" />
-      <workItem from="1668161042577" duration="640000" />
-      <workItem from="1668273633130" duration="495000" />
-      <workItem from="1668274146652" duration="252000" />
-      <workItem from="1668284026137" duration="5547000" />
-      <workItem from="1668291176615" duration="228000" />
-      <workItem from="1668427968862" duration="3648000" />
-      <workItem from="1668442603517" duration="4394000" />
-      <workItem from="1668490332435" duration="8000" />
-      <workItem from="1668490376215" duration="178000" />
-      <workItem from="1668490627496" duration="628000" />
-      <workItem from="1668491340875" duration="81000" />
-      <workItem from="1668491466385" duration="7299000" />
-      <workItem from="1668514368870" duration="3046000" />
-      <workItem from="1668526858659" duration="31000" />
-      <workItem from="1668550147249" duration="4008000" />
-      <workItem from="1668612500147" duration="8104000" />
-      <workItem from="1668622040744" duration="70000" />
-      <workItem from="1668622254418" duration="54000" />
-      <workItem from="1668622342447" duration="106000" />
-      <workItem from="1668727888506" duration="350000" />
-      <workItem from="1668749087721" duration="7425000" />
-      <workItem from="1668767717983" duration="2718000" />
-      <workItem from="1668770777824" duration="251000" />
-      <workItem from="1668771176736" duration="337000" />
-      <workItem from="1668805987118" duration="3045000" />
-      <workItem from="1668881322553" duration="6744000" />
-      <workItem from="1668933002812" duration="398000" />
-      <workItem from="1669025259557" duration="490000" />
-      <workItem from="1669042173097" duration="939000" />
-      <workItem from="1669047114813" duration="328000" />
-      <workItem from="1669049826158" duration="1665000" />
-      <workItem from="1669058822666" duration="27000" />
-      <workItem from="1669094637771" duration="12552000" />
-      <workItem from="1669138363941" duration="40000" />
-      <workItem from="1669283090087" duration="3130000" />
-      <workItem from="1669290650998" duration="3925000" />
-      <workItem from="1669313555161" duration="2162000" />
-      <workItem from="1669345605681" duration="2900000" />
-      <workItem from="1669356990767" duration="4009000" />
-      <workItem from="1669409782744" duration="2313000" />
-      <workItem from="1669554255644" duration="3000" />
-      <workItem from="1669702981305" duration="1068000" />
-      <workItem from="1669704070166" duration="3372000" />
-      <workItem from="1669712656924" duration="2490000" />
-      <workItem from="1669717509357" duration="5255000" />
-      <workItem from="1669736449917" duration="64000" />
-      <workItem from="1669795197075" duration="71000" />
-      <workItem from="1669795360278" duration="20000" />
-      <workItem from="1669923404794" duration="62000" />
-      <workItem from="1670242641869" duration="3000" />
-      <workItem from="1670365287033" duration="1953000" />
+      <updated>1670556241993</updated>
+      <workItem from="1670556244592" duration="25000" />
+      <workItem from="1670556499721" duration="130000" />
     </task>
     <servers />
   </component>
