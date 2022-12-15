@@ -35,6 +35,11 @@ export const changeTodolistFilterAC = (id: string, filter: FilterValuesType) => 
     filter
 } as const)
 export const setTodolistsAC = (todolists: Array<TodolistType>) => ({type: 'SET-TODOLISTS', todolists} as const)
+const changeTodolistEntityStatusAC = (id: string, entityStatus: RequestStatusType) => ({
+    type: 'SET-ENTITY-STATUS',
+    id,
+    entityStatus
+} as const)
 
 // thunks
 export const fetchTodolistsTC = () => {
