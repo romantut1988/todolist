@@ -1,8 +1,15 @@
 import {AddTodolistActionType, RemoveTodolistActionType, SetTodolistsActionType} from './todolists-reducer'
-import {TaskPriorities, TaskStatuses, TaskType, todolistsAPI, UpdateTaskModelType} from '../../api/todolists-api'
+import {
+    ResultStatus,
+    TaskPriorities,
+    TaskStatuses,
+    TaskType,
+    todolistsAPI,
+    UpdateTaskModelType
+} from '../../api/todolists-api'
 import {Dispatch} from 'redux'
 import {AppRootStateType} from '../../app/store'
-import {setStatus, SetStatusType} from "../../app/app-reducer";
+import {setError, setErrorType, setStatus, SetStatusType} from "../../app/app-reducer";
 
 const initialState: TasksStateType = {}
 
@@ -76,6 +83,10 @@ export const addTaskTC = (title: string, todolistId: string) => (dispatch: Dispa
             dispatch(action)
             dispatch(setStatus('succeeded'))
         })
+        .catch((e) => {
+            dispatch(setError(e.message))
+            dispatch(setStatus('failed'))
+        })
 }
 export const updateTaskTC = (taskId: string, domainModel: UpdateDomainTaskModelType, todolistId: string) =>
     (dispatch: Dispatch<ActionsType>, getState: () => AppRootStateType) => {
@@ -100,9 +111,22 @@ export const updateTaskTC = (taskId: string, domainModel: UpdateDomainTaskModelT
 
         todolistsAPI.updateTask(todolistId, taskId, apiModel)
             .then(res => {
-                const action = updateTaskAC(taskId, domainModel, todolistId)
-                dispatch(action)
-                dispatch(setStatus('succeeded'))
+                    if (res.data.resultCode === ResultStatus.OK) {
+                        const action = updateTaskAC(taskId, domainModel, todolistId)
+                        dispatch(action)
+                        dispatch(setStatus('succeeded'))
+                    } else {
+                        if (res.data.messages.length) {
+                            dispatch(setError(res.data.messages[0]))
+                        } else {
+                            dispatch(setError(res.data.messages[0]))
+                        }
+                    }
+                }
+            )
+            .catch((e) => {
+                dispatch((setStatus('failed')))
+                dispatch((setStatus(e.message)))
             })
     }
 
@@ -118,6 +142,8 @@ export type UpdateDomainTaskModelType = {
 export type TasksStateType = {
     [key: string]: Array<TaskType>
 }
+
+
 type ActionsType =
     | ReturnType<typeof removeTaskAC>
     | ReturnType<typeof addTaskAC>
@@ -127,3 +153,4 @@ type ActionsType =
     | SetTodolistsActionType
     | ReturnType<typeof setTasksAC>
     | SetStatusType
+    | setErrorType
