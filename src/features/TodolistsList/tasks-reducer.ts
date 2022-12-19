@@ -78,10 +78,18 @@ export const removeTaskTC = (taskId: string, todolistId: string) => (dispatch: D
 export const addTaskTC = (title: string, todolistId: string) => (dispatch: Dispatch<ActionsType>) => {
     todolistsAPI.createTask(todolistId, title)
         .then(res => {
-            const task = res.data.data.item
-            const action = addTaskAC(task)
-            dispatch(action)
-            dispatch(setStatus('succeeded'))
+            if (res.data.resultCode === ResultStatus.OK) {
+                const task = res.data.data.item
+                const action = addTaskAC(task)
+                dispatch(action)
+                dispatch(setStatus('succeeded'))
+            } else {
+                if (res.data.messages.length) {
+                    dispatch(setError(res.data.messages[0]))
+                } else {
+                    dispatch(setError(res.data.messages[0]))
+                }
+            }
         })
         .catch((e) => {
             dispatch(setError(e.message))
