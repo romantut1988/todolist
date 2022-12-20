@@ -1,6 +1,7 @@
-import {todolistsAPI, TodolistType} from '../../api/todolists-api'
+import {ResultStatus, todolistsAPI, TodolistType} from '../../api/todolists-api'
 import {Dispatch} from 'redux'
 import {RequestStatusType, setStatus, SetStatusType} from "../../app/app-reducer";
+import {handleServerAppError} from "../../util/error-utils";
 
 const initialState: Array<TodolistDomainType> = []
 
@@ -60,8 +61,12 @@ export const removeTodolistTC = (todolistId: string) => {
         dispatch(changeTodolistEntityStatusAC(todolistId, 'loading'))
         todolistsAPI.deleteTodolist(todolistId)
             .then((res) => {
-                dispatch(removeTodolistAC(todolistId))
-                dispatch(setStatus('succeeded'))
+                if (res.data.resultCode === ResultStatus.OK) {
+                    dispatch(removeTodolistAC(todolistId))
+                    dispatch(setStatus('succeeded'))
+                } else {
+                    handleServerAppError(res.data, dispatch)
+                }
             }).catch((e) => {
             dispatch(setStatus('failed'))
             dispatch(changeTodolistEntityStatusAC(todolistId, 'failed'))
@@ -73,8 +78,12 @@ export const addTodolistTC = (title: string) => {
         dispatch(setStatus('loading'))
         todolistsAPI.createTodolist(title)
             .then((res) => {
-                dispatch(addTodolistAC(res.data.data.item))
-                dispatch(setStatus('succeeded'))
+                if (res.data.resultCode === ResultStatus.OK) {
+                    dispatch(addTodolistAC(res.data.data.item))
+                    dispatch(setStatus('succeeded'))
+                } else {
+                    handleServerAppError<{ item: TodolistType }>(res.data, dispatch)
+                }
             })
     }
 }

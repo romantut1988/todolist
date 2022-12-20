@@ -10,6 +10,8 @@ import {
 import {Dispatch} from 'redux'
 import {AppRootStateType} from '../../app/store'
 import {setError, setErrorType, setStatus, SetStatusType} from "../../app/app-reducer";
+import {handleServerAppError, handleServerNetworkError} from "../../util/error-utils";
+import any = jasmine.any;
 
 const initialState: TasksStateType = {}
 
@@ -84,16 +86,11 @@ export const addTaskTC = (title: string, todolistId: string) => (dispatch: Dispa
                 dispatch(action)
                 dispatch(setStatus('succeeded'))
             } else {
-                if (res.data.messages.length) {
-                    dispatch(setError(res.data.messages[0]))
-                } else {
-                    dispatch(setError(res.data.messages[0]))
-                }
+                handleServerAppError(res.data, dispatch)
             }
         })
         .catch((e) => {
-            dispatch(setError(e.message))
-            dispatch(setStatus('failed'))
+            handleServerNetworkError(e, dispatch)
         })
 }
 export const updateTaskTC = (taskId: string, domainModel: UpdateDomainTaskModelType, todolistId: string) =>
@@ -119,22 +116,16 @@ export const updateTaskTC = (taskId: string, domainModel: UpdateDomainTaskModelT
 
         todolistsAPI.updateTask(todolistId, taskId, apiModel)
             .then(res => {
-                    if (res.data.resultCode === ResultStatus.OK) {
-                        const action = updateTaskAC(taskId, domainModel, todolistId)
-                        dispatch(action)
-                        dispatch(setStatus('succeeded'))
-                    } else {
-                        if (res.data.messages.length) {
-                            dispatch(setError(res.data.messages[0]))
-                        } else {
-                            dispatch(setError(res.data.messages[0]))
-                        }
-                    }
+                if (res.data.resultCode === ResultStatus.OK) {
+                    const action = updateTaskAC(taskId, domainModel, todolistId)
+                    dispatch(action)
+                    dispatch(setStatus('succeeded'))
+                } else {
+                    handleServerAppError<{ item: TaskType }>(res.data, dispatch)
                 }
-            )
+            })
             .catch((e) => {
-                dispatch((setStatus('failed')))
-                dispatch((setStatus(e.message)))
+                handleServerNetworkError(e, dispatch)
             })
     }
 
