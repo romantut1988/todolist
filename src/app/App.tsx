@@ -13,6 +13,7 @@ import Container from '@mui/material/Container';
 import LinearProgress from '@mui/material/LinearProgress';
 import { Menu } from '@mui/icons-material';
 import { ErrorSnackbar } from '../components/ErrorSnackbar/ErrorSnackbar'
+import {Login} from "../features/Login/Login";
 
 type PropsType = {
     demo?: boolean
@@ -37,6 +38,7 @@ function App({demo = false}: PropsType) {
             </AppBar>
             <Container fixed>
                 <TodolistsList demo={demo}/>
+                <Login />
             </Container>
         </div>
     )
