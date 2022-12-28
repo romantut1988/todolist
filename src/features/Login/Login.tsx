@@ -9,6 +9,12 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import {useFormik} from "formik";
 
+type FormikErrorType = {
+    email?: string,
+    password?: string,
+    rememberMe?: boolean
+}
+
 export const Login = () => {
 
     const formik = useFormik({
@@ -17,13 +23,19 @@ export const Login = () => {
             password: '',
             rememberMe: false,
         },
+        validate: (values) => {
+            const errors: FormikErrorType = {};
+            if (!values.email) {
+                errors.email = 'Required';
+            } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+                errors.email = 'Invalid email address';
+            }
+            return errors;
+        },
         onSubmit: values => {
             alert(JSON.stringify(values, null, 2));
         },
     });
-
-    console.log(formik.values)
-
 
     return <Grid container justifyContent={'center'}>
         <Grid item justifyContent={'center'}>
@@ -46,6 +58,7 @@ export const Login = () => {
                                    onChange={formik.handleChange}
                                    value={formik.values.email}
                         />
+                        {formik.errors.email && <div style={{color: 'red'}}>{formik.errors.email}</div>}
                         <TextField type="password"
                                    label="Password"
                                    margin="normal"
@@ -53,6 +66,7 @@ export const Login = () => {
                                    onChange={formik.handleChange}
                                    value={formik.values.password}
                         />
+                        {formik.errors.password && <div>{formik.errors.password}</div>}
                         <FormControlLabel label={'Remember me'}
                                           control={
                                               <Checkbox
