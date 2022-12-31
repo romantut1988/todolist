@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8916778e-83a4-462b-9171-1a09418ddb7b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/features/Login/auth-reducer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/todolists-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/todolists-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/store.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/Login/Login.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/features/TodolistsList/TodolistsList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/TodolistsList/TodolistsList.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +79,11 @@
       <workItem from="1672176365316" duration="63000" />
       <workItem from="1672176430555" duration="9000" />
       <workItem from="1672219437650" duration="1298000" />
-      <workItem from="1672262672154" duration="3356000" />
+      <workItem from="1672262672154" duration="3736000" />
+      <workItem from="1672348286156" duration="970000" />
+      <workItem from="1672490774606" duration="3221000" />
+      <workItem from="1672499105739" duration="612000" />
+      <workItem from="1672506791943" duration="3009000" />
     </task>
     <servers />
   </component>

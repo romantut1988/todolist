@@ -9,13 +9,22 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import {useFormik} from "formik";
 
+import {loginTC} from "./auth-reducer";
+import {useAppDispatch, useAppSelector} from "../../app/store";
+
 type FormikErrorType = {
     email?: string,
     password?: string,
     rememberMe?: boolean
 }
 
+function Navigate(props: { to: string }) {
+    return null;
+}
+
 export const Login = () => {
+    const dispatch = useAppDispatch()
+    const isLoggedIn = useAppSelector(state => state.auth.isLoggedIn)
 
     const formik = useFormik({
         initialValues: {
@@ -37,10 +46,14 @@ export const Login = () => {
             return errors;
         },
         onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
+            dispatch(loginTC(values))
             formik.resetForm();
         },
     });
+
+    if (isLoggedIn) {
+        return <Navigate to={'/'}/>
+    }
 
     return <Grid container justifyContent={'center'}>
         <Grid item justifyContent={'center'}>
